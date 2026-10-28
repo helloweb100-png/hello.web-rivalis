@@ -629,6 +629,17 @@
         nums.forEach(n => { n.textContent = '0'; io.observe(n); });
     }
 
+    /* 12b · SELECTOR DE COLOR en las secciones de detalle (cinturones) ------------------------------------------ */
+    function initSwatchGroups() {
+        $$('[data-swatch-group]').forEach(g => {
+            const btns = $$('.swatch', g), imgs = $$('.spec__img[data-for]', g);
+            btns.forEach(b => b.addEventListener('click', () => {
+                btns.forEach(o => { const on = o === b; o.classList.toggle('is-on', on); o.setAttribute('aria-pressed', String(on)); });
+                imgs.forEach(im => im.classList.toggle('is-on', im.dataset.for === b.dataset.swatch));
+            }));
+        });
+    }
+
     /* 13 · SUPERACIÓN (la imagen se abre con el scroll) ------------------------------------------------------------ */
     function initReach() {
         const sec = $('#superacion'), frame = $('#reachFrame'), pin = $('.reach__pin', sec || d), bg = $('.reach__bgtext span', sec || d);
@@ -806,6 +817,7 @@
         initCode();
         initProducts();
         initSpec();
+        initSwatchGroups();
         initReach();
         initTeam();
         initProcess();

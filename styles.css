@@ -482,6 +482,23 @@ html.lenis, html.lenis body { height: auto; }
 .stat dd b { font-size: clamp(2.2rem, 8vw, 3.6rem); line-height: 1; font-weight: 800; color: var(--white); font-variant-numeric: tabular-nums; }
 .stat dd small { font-size: 1.3rem; font-weight: 700; color: var(--lime); }
 .spec__cta { margin-top: 2.5rem; }
+/* DETALLE POR PRODUCTO (cinturones, toallas): misma sección que las ánforas, con círculos de acercamiento */
+.spec--feat { padding: 5rem 0; }
+.spec--feat .spec__wrap { grid-template-columns: minmax(0, 1fr); }
+.spec__stage--wide { width: min(92vw, 46rem); aspect-ratio: var(--ar, 1200 / 520); margin: 2.5rem auto 1.5rem; }
+.spec__stage--wide .spec__halo { width: 120%; aspect-ratio: 2 / 1; }
+.spec__stage--wide .spec__rings i { aspect-ratio: auto; animation: none; }
+.spec__stage--wide .spec__rings i:nth-child(1) { width: 112%; height: 150%; }
+.spec__stage--wide .spec__rings i:nth-child(2) { width: 134%; height: 190%; }
+.spec__stage--wide .spec__rings i:nth-child(3) { width: 88%; height: 112%; }
+.spec__feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr)); gap: 1.4rem 2rem; width: 100%; max-width: 62rem; margin: 1.5rem 0 .5rem; text-align: left; }
+.spec__feat--2 { max-width: 42rem; }
+.spec__feat li { display: flex; align-items: center; gap: 1rem; }
+.spec__zoom { flex: none; width: 5.4rem; height: 5.4rem; border-radius: 50%; object-fit: cover; border: 2px solid var(--lime); background: #0c0e10; box-shadow: 0 0 22px rgba(203, 241, 0, .3); }
+.spec__t { display: flex; gap: .7rem; align-items: flex-start; }
+.spec__t b { flex: none; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--lime); color: var(--black); font-size: .8rem; }
+.spec__t strong { display: block; font: italic 700 1.1rem/1.1 var(--f-display); text-transform: uppercase; }
+.spec__t span { color: var(--mute); font-size: .88rem; line-height: 1.35; display: block; margin-top: .2rem; }
 
 /* 14 · SUPERACIÓN (imagen que se abre) ------------------------------------------- */
 .reach { position: relative; height: 340vh; background: var(--black); }
